@@ -25,11 +25,11 @@ spec:
   project: {{ tpl .project $ }}
   {{- with .source }}
   source:
-    {{- toYaml . | nindent 4 }}
+    {{- tpl ( toYaml . ) $ | nindent 4 }}
   {{- end }}
   {{- with .sources }}
   sources:
-    {{- toYaml . | nindent 4 }}
+    {{- tpl ( toYaml . )$ | nindent 4 }}
   {{- end }}
   destination:
     {{- toYaml .destination | nindent 4 }}
